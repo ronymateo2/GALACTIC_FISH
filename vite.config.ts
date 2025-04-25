@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/galactic-fish/", // 👈 usa el nombre real del repositorio
+  base: "/GALACTIC_FISH/", // 👈 usa el nombre real del repositorio
   plugins: [react(), tailwindcss()],
 });
