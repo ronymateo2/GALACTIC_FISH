@@ -2,6 +2,11 @@
 
 A modern, offline-first React application that displays a live leaderboard and a market system for a galactic fishing game.  
 Built with **Vite**, **TypeScript**, **React Query**, and **Progressive Web App (PWA)** strategies.
+---
+
+## Demo
+
+Access the live demo here: https://ronymateo2.github.io/GALACTIC_FISH/
 
 ---
 
@@ -9,7 +14,7 @@ Built with **Vite**, **TypeScript**, **React Query**, and **Progressive Web App 
 
 ```bash
 # Clone the repository
-git clone <your-repository-url>
+git clone https://github.com/ronymateo2/GALACTIC_FISH
 
 # Navigate to project directory
 cd galactic-fish
