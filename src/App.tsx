@@ -1,10 +1,10 @@
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import GalacticFishLayout from "./layout/GalacticFishLayout";
-import LoadingBar from "./components/LoadingBar";
-import { LoadingProvider } from "./components/ContentLoading";
-import OfflineIndicator from "./components/OfflineIndicator";
+import GalacticFishApp from "./app/GalacticFishApp";
+import LoadingBar from "./components/ui/LoadingBar";
+import { LoadingProvider } from "./components/context/LoadingContext";
+import OfflineIndicator from "./components/ui/OfflineIndicator";
 
 const queryClient = new QueryClient();
 
@@ -14,7 +14,7 @@ function App() {
       <LoadingProvider>
         <LoadingBar></LoadingBar>
         <OfflineIndicator />
-        <GalacticFishLayout></GalacticFishLayout>
+        <GalacticFishApp></GalacticFishApp>
       </LoadingProvider>
     </QueryClientProvider>
   );

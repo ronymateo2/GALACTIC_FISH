@@ -23,7 +23,7 @@ export const useLeaderBoardData = () => {
     placeholderData: () => {
       const cached = get(STORAGE_KEY_LEADER_BOARD);
       if (cached) {
-        console.log("Using placeholderData from cache");
+        console.log("");
         return cached;
       }
       return undefined;

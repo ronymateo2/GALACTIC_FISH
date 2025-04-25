@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useLoading } from "../hooks/useLoading";
+import { useLoading } from "../../hooks/useLoading";
 import { useEffect, useState } from "react";
 
 export default function LoadingBar() {

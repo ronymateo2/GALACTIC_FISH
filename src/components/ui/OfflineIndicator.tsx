@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Offline from "../assets/offline.svg";
+import Offline from "../../assets/offline.svg";
 
 export default function OfflineIndicator() {
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
