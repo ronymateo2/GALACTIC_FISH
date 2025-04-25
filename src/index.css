@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+
+.item-icon {
+  display: inline-block;
+  background-image: url('/icons/market-sprite.png');
+  background-size: 100% auto; /* single-column stacked layout */
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
+.icon-fishing-rod    { background-position: 0% 0%; }
+.icon-poison-purple  { background-position: 0% 20%; }
+.icon-poison-orange  { background-position: 0% 40%; }
+.icon-poison-green   { background-position: 0% 60%; }
+.icon-mystery-item   { background-position: 0% 80%; }
