@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import { useLeaderBoardData } from "../hooks/useLeaderBoardData";
-import { useLoading } from "../hooks/useLoading";
+import { useLoadingEffect } from "../hooks/useLoadingEffect";
 
-// Define the Player type if not imported from elsewhere
 type Player = {
   username: string;
   rank: number;
@@ -13,12 +11,7 @@ type Player = {
 
 export default function LeaderBoard() {
   const { data, isLoading, isError, error } = useLeaderBoardData();
-  const { startLoading, stopLoading } = useLoading();
-
-  useEffect(() => {
-    if (isLoading) startLoading();
-    else stopLoading();
-  }, [isLoading, startLoading, stopLoading]);
+  useLoadingEffect(isLoading);
 
   if (isLoading || !data) {
     return <></>;

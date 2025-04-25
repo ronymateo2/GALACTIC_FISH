@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import { useLoading } from "../hooks/useLoading";
 import { useMarketData } from "../hooks/useMarketData";
+import { useLoadingEffect } from "../hooks/useLoadingEffect";
 
 // Define the MarketItem type according to your data structure
 type MarketItem = {
@@ -13,12 +12,7 @@ type MarketItem = {
 
 export default function Market() {
   const { data, isError, error, isLoading } = useMarketData();
-  const { startLoading, stopLoading } = useLoading();
-
-  useEffect(() => {
-    if (isLoading) startLoading();
-    else stopLoading();
-  }, [isLoading, startLoading, stopLoading]);
+  useLoadingEffect(isLoading);
 
   if (isLoading || !data) {
     return <></>;
@@ -37,7 +31,6 @@ export default function Market() {
       <div className="divide-y divide-blue-100">
         {data?.items?.map((item: MarketItem) => (
           <div key={item.id} className="flex items-center gap-3 py-4 px-6">
-            {/* <div className={`item-icon ${item.type}`} /> */}
             <div>
               <div className="font-semibold text-blue-900">{item.name}</div>
               <p className="text-sm text-blue-800">{item.description}</p>
