@@ -20,7 +20,7 @@ export default function LeaderBoard() {
     else stopLoading();
   }, [isLoading, startLoading, stopLoading]);
 
-  if (isLoading) {
+  if (isLoading || !data) {
     return <></>;
   }
 

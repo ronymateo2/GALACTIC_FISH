@@ -2,7 +2,6 @@ import { MARKET_ENDPOINT } from "../config/config";
 
 const fetchMarket = async () => {
   try {
-    console.log("Fetching market data...");
     const res = await fetch(MARKET_ENDPOINT);
     if (!res.ok) throw new Error("Error loading market data");
     return await res.json();
