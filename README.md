@@ -1,54 +1,99 @@
-# React + TypeScript + Vite
+# GalacticFish - Leaderboard & Market App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, offline-first React application that displays a live leaderboard and a market system for a galactic fishing game.  
+Built with **Vite**, **TypeScript**, **React Query**, and **Progressive Web App (PWA)** strategies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+```bash
+# Clone the repository
+git clone <your-repository-url>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Navigate to project directory
+cd galactic-fish
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Running the App (Development Mode)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+The app will be available at `http://localhost:5173/`.
+
+---
+
+## 🧪 Running Tests
+
+```bash
+npm run test
+# or if using Vitest
+npx vitest run
+```
+
+---
+
+## 📂 Project Structure
+
+```
+├── public/               # Static assets (webp backgrounds, SVGs)
+├── src/
+│   ├── assets/            # Images and icons
+│   ├── components/        # UI components (LeaderBoard, Market, Loading indicators)
+│   ├── config/            # App configuration constants
+│   ├── hooks/             # Custom hooks (useLeaderBoardData, useMarketData)
+│   ├── layout/            # Layouts used across pages
+│   ├── services/          # API Services (market and leaderboard)
+│   └── App.tsx            # Main App component
+├── package.json
+├── vite.config.ts         # Vite configuration
+├── tsconfig.json          # TypeScript configuration
+├── eslint.config.js       # ESLint configuration
+└── README.md
+```
+
+---
+
+## 🌐 Key Technologies
+
+- **React 18**
+- **Vite**
+- **TypeScript**
+- **React Query** (`@tanstack/react-query`)
+- **PWA Ready** (offline caching)
+- **Vitest** (testing, if set up)
+
+---
+
+## 📈 Features
+
+- Live leaderboard fetching
+- Marketplace for buying items
+- Offline support with visual indicators
+- Fast loading with Vite bundler
+- Clean and modular code architecture
+- Future-proofed with TypeScript
+
+---
+
+## Known Issues / Future Improvements
+
+- Add comprehensive unit and integration tests
+- Improve error boundary handling across the app
+- Centralized error management for API services
+- UI enhancements for mobile experience
+
+---
+
+## Author
+
+- Rony Mateo – Frontend Developer
+
+---

@@ -1,7 +1,7 @@
 import "./index.css";
-
-import GalacticFish from "./layout/GalacticFishLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import GalacticFishLayout from "./layout/GalacticFishLayout";
 import LoadingBar from "./components/LoadingBar";
 import { LoadingProvider } from "./components/ContentLoading";
 import OfflineIndicator from "./components/OfflineIndicator";
@@ -14,7 +14,7 @@ function App() {
       <LoadingProvider>
         <LoadingBar></LoadingBar>
         <OfflineIndicator />
-        <GalacticFish></GalacticFish>
+        <GalacticFishLayout></GalacticFishLayout>
       </LoadingProvider>
     </QueryClientProvider>
   );
