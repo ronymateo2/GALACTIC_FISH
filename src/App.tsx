@@ -1,4 +1,3 @@
-import "./App.css";
 import "./index.css";
 
 import GalacticFish from "./layout/GalacticFishLayout";
