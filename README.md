@@ -48,21 +48,29 @@ npx vitest run
 ## 📂 Project Structure
 
 ```
-├── public/               # Static assets (webp backgrounds, SVGs)
+├── public/                  # Static assets (backgrounds, SVGs)
 ├── src/
-│   ├── assets/            # Images and icons
-│   ├── components/        # UI components (LeaderBoard, Market, Loading indicators)
-│   ├── config/            # App configuration constants
-│   ├── hooks/             # Custom hooks (useLeaderBoardData, useMarketData)
-│   ├── layout/            # Layouts used across pages
-│   ├── services/          # API Services (market and leaderboard)
-│   └── App.tsx            # Main App component
+│   ├── app/                 # Main app entry (GalacticFishApp.tsx)
+│   ├── assets/              # Images and icons (SVGs)
+│   ├── components/          # UI components
+│   │   ├── LeaderBoard.tsx  # Leaderboard card and table
+│   │   ├── Market.tsx       # Market card
+│   │   ├── context/         # React context (e.g., LoadingContext)
+│   │   └── ui/              # Shared UI (LoadingBar, OfflineIndicator)
+│   ├── config/              # App configuration
+│   ├── hooks/               # Custom hooks (data fetching, loading)
+│   ├── services/            # API and cache services
+│   ├── App.tsx              # Main App component
+│   ├── index.css            # Tailwind and global styles
+│   └── main.tsx             # React entry point
 ├── package.json
-├── vite.config.ts         # Vite configuration
-├── tsconfig.json          # TypeScript configuration
-├── eslint.config.js       # ESLint configuration
+├── vite.config.ts           # Vite configuration
+├── tsconfig.json            # TypeScript configuration
+├── eslint.config.js         # ESLint configuration
 └── README.md
 ```
+
+This structure helps keep your code modular and maintainable, separating UI, logic, assets, and configuration.
 
 ---
 
