@@ -7,11 +7,11 @@ import Market from "../components/Market";
 export default function GalacticFish() {
   return (
     <>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+      <div className="absolute top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
         <motion.img
           src={Planet1}
           alt="Planet"
-          className="w-80 h-28 md:w-90 md:h-90"
+          className="w-80 h-80 md:w-85 md:h-85"
           animate={{
             y: [0, -12, 0],
             rotate: [0, 15, -15, 0],

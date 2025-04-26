@@ -36,9 +36,9 @@ export default function Market() {
   }
 
   return (
-    <div className="w-full max-w-2xl rounded-[28px] bg-[rgba(34,48,74,0.55)] bg-gradient-to-b from-[rgba(34,48,74,0.55)] to-[rgba(26,35,50,0.55)] shadow-lg overflow-hidden mb-8 border border-[#3a4a6b] backdrop-blur-md">
-      <div className="bg-[rgba(45,62,94,0.65)] px-10 py-5 rounded-t-[28px]">
-        <h2 className="text-[#b6d3f7] font-bold text-xl text-center tracking-wide">
+    <div className="w-full max-w-2xl rounded-[20px] bg-[rgba(34,48,74,0.25)] bg-gradient-to-b from-[rgba(34,48,74,0.25)] to-[rgba(26,35,50,0.25)] shadow-lg overflow-hidden mb-8 border border-[#3a4a6b] backdrop-blur-md">
+      <div className="bg-[rgba(45,62,94,0.18)] px-6 xl:px-10 py-3 xl:py-5 rounded-t-[20px]">
+        <h2 className="text-[#b6d3f7] font-bold text-lg xl:text-2xl text-center tracking-wide">
           MARKET
         </h2>
       </div>

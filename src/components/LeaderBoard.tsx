@@ -29,8 +29,8 @@ export default function LeaderBoard() {
   }
 
   return (
-    <div className="w-full max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded-[20px] bg-[rgba(34,48,74,0.55)] bg-gradient-to-b from-[rgba(34,48,74,0.55)] to-[rgba(26,35,50,0.55)] shadow-lg overflow-hidden mb-4 border border-[#3a4a6b] backdrop-blur-md">
-      <div className="bg-[rgba(45,62,94,0.65)] px-6 xl:px-10 py-3 xl:py-5 rounded-t-[20px]">
+    <div className="w-full max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded-[20px] bg-[rgba(34,48,74,0.25)] bg-gradient-to-b from-[rgba(34,48,74,0.25)] to-[rgba(26,35,50,0.25)] shadow-lg overflow-hidden mb-4 border border-[#3a4a6b] backdrop-blur-md">
+      <div className="bg-[rgba(45,62,94,0.18)] px-6 xl:px-10 py-3 xl:py-5 rounded-t-[20px]">
         <h2 className="text-[#b6d3f7] font-bold text-lg xl:text-2xl text-center tracking-wide">
           LEADERBOARD
         </h2>
@@ -40,39 +40,45 @@ export default function LeaderBoard() {
         {data.players.map((player: Player) => (
           <div
             key={player.username}
-            className="rounded-xl bg-[rgba(34,48,74,0.85)] px-4 py-3 flex flex-col shadow-md relative"
+            className="rounded-xl bg-[rgba(34,48,74,0.25)] px-4 py-4 flex shadow-md relative"
           >
-            <div className="flex items-start justify-between mb-1">
-              <span className="text-lg font-extrabold text-white">
+            {/* Rank/Medal */}
+            <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 mr-4">
+              {player.rank <= 3 ? (
+                <span
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-full font-bold text-3xl shadow-md ${
+                    medalColors[player.rank - 1]
+                  }`}
+                >
+                  {player.rank}
+                </span>
+              ) : (
+                <span className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#22304a] text-[#b6d3f7] font-bold text-3xl">
+                  {player.rank}
+                </span>
+              )}
+            </div>
+            {/* Username and stats */}
+            <div className="flex flex-col justify-center flex-1">
+              <span className="text-xl font-extrabold text-white mb-1">
                 {player.username}
               </span>
-              <span className="text-base font-bold text-[#ffe066]">
-                #{player.rank}
-              </span>
-            </div>
-            <div className="flex flex-col gap-0.5">
-              <div className="flex items-center gap-1">
-                <span className="text-[#b6d3f7] font-semibold text-base">
-                  Level:
+              <div className="flex flex-row flex-wrap gap-x-6 gap-y-1">
+                <span className="text-[#7da2ce] font-bold text-lg">
+                  XP:{" "}
+                  <span className="text-white font-bold">
+                    {player.xp.toLocaleString()}
+                  </span>
                 </span>
-                <span className="text-white font-bold text-base">
-                  {player.level.toLocaleString()}
+                <span className="text-[#7da2ce] font-bold text-lg">
+                  Gold:{" "}
+                  <span className="text-[#ffe066] font-bold">
+                    {player.gold.toLocaleString()}
+                  </span>
                 </span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#b6d3f7] font-semibold text-base">
-                  XP
-                </span>
-                <span className="text-white font-bold text-base">
-                  {player.xp.toLocaleString()}
-                </span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#b6d3f7] font-semibold text-base">
-                  Gold
-                </span>
-                <span className="text-[#ffe066] font-bold text-base">
-                  {player.gold.toLocaleString()}
+                <span className="text-[#7da2ce] font-bold text-lg">
+                  Lv.{" "}
+                  <span className="text-white font-bold">{player.level}</span>
                 </span>
               </div>
             </div>
@@ -92,17 +98,19 @@ export default function LeaderBoard() {
             </tr>
           </thead>
           <tbody>
-            {data.players.map((player: Player, idx: number) => (
+            {data.players.map((player: Player) => (
               <tr
                 key={player.username}
                 className="border-b border-[#2d3e5e] last:border-0 bg-[rgba(34,48,74,0.35)] hover:bg-[rgba(34,48,74,0.55)] transition"
               >
                 <td className="px-2 py-2 text-center">
-                  {idx < 3 ? (
+                  {player.rank <= 3 ? (
                     <span
-                      className={`inline-flex items-center justify-center w-6 h-6 rounded-full font-bold text-xs shadow-md ${medalColors[idx]}`}
+                      className={`inline-flex items-center justify-center w-6 h-6 rounded-full font-bold text-xs shadow-md ${
+                        medalColors[player.rank - 1]
+                      }`}
                     >
-                      {idx + 1}
+                      {player.rank}
                     </span>
                   ) : (
                     <span className="text-[#b6d3f7] font-semibold">
@@ -113,7 +121,7 @@ export default function LeaderBoard() {
                 <td className="px-2 py-2">
                   <span
                     className={`font-semibold ${
-                      idx < 3 ? "text-white" : "text-[#e6eaf3]"
+                      player.rank <= 3 ? "text-white" : "text-[#e6eaf3]"
                     }`}
                   >
                     {player.username}
