@@ -84,7 +84,7 @@ export default function LeaderBoard() {
         <table className="w-full text-sm text-[#e6eaf3]">
           <thead>
             <tr className="text-left font-semibold text-[#b6d3f7] text-xs">
-              <th className="px-2 py-2 w-8">#</th>
+              <th className="px-2 py-2 w-8 text-center">#</th>
               <th className="px-2 py-2">Username</th>
               <th className="px-2 py-2 text-right">Level</th>
               <th className="px-2 py-2 text-right">XP</th>
@@ -97,7 +97,7 @@ export default function LeaderBoard() {
                 key={player.username}
                 className="border-b border-[#2d3e5e] last:border-0 bg-[rgba(34,48,74,0.35)] hover:bg-[rgba(34,48,74,0.55)] transition"
               >
-                <td className="px-2 py-2">
+                <td className="px-2 py-2 text-center">
                   {idx < 3 ? (
                     <span
                       className={`inline-flex items-center justify-center w-6 h-6 rounded-full font-bold text-xs shadow-md ${medalColors[idx]}`}
