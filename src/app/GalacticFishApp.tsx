@@ -24,24 +24,24 @@ export default function GalacticFish() {
         />
       </div>
       <div
-        className="min-h-screen bg-cover bg-center flex flex-col items-center pt-8 px-4
-        bg-[url('/bg-desktop.webp')]
-        sm:bg-[url('/bg-mobile.webp')]
-        md:bg-[url('/bg-tablet.webp')]
-        xl:bg-[url('/bg-4k.webp')]"
+        className="min-h-screen bg-cover bg-center flex flex-col items-center pt-4 px-2
+        bg-[url('./bg-desktop.webp')]
+        sm:bg-[url('./bg-mobile.webp')]
+        md:bg-[url('./bg-tablet.webp')]
+        xl:bg-[url('./bg-4k.webp')]"
       >
         <div className="relative flex flex-col items-center z-10">
           <motion.img
             src={FishIcon}
-            className="w-35 h-35 z-10"
+            className="w-24 h-24 z-10"
             animate={{ y: [0, -8, 0], rotate: [0, 8, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           ></motion.img>
-          <h1 className="text-white text-5xl font-bold drop-shadow-xl leading-tight text-center mb-8">
+          <h1 className="text-white text-3xl font-bold drop-shadow-xl leading-tight text-center mb-4">
             GALACTIC FISH
           </h1>
         </div>
-        <div className="container flex flex-col md:flex-row gap-8 md:gap-8 items-start justify-center z-20 mx-auto px-4 md:px-8 mt-2 md:mt-6">
+        <div className="container flex flex-col md:flex-row gap-4 md:gap-4 items-start justify-center z-20 mx-auto px-2 md:px-4 mt-1 md:mt-3">
           <LeaderBoard />
           <Market />
         </div>
